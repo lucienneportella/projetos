@@ -1,0 +1,83 @@
+package portella.lucienne;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Teste {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+
+		Lista<Produtos> l = new Lista<Produtos>(); // L > itens [0][1][2][3][4]
+
+		Produtos produtos;
+
+		int opcao = 1;
+		int qnt = 0;
+		while (opcao != 0) {
+			opcao = obterOpcaoMenu(sc);
+
+			switch (opcao) {
+			case 1: {
+
+				visualizarIten(l);
+				break;
+			case 2:
+			
+			}
+
+		}
+	}
+}
+	protected static int obterOpcaoMenu(Scanner sc) {
+
+		boolean entradaValida = false;
+		int opcao = 0;
+
+		while (!entradaValida) {
+			System.out.println("Digite a opção desejada");
+			System.out.println("1. Visualizar itens  na lista");
+			System.out.println("2. Adicionar itens na lista ");
+			System.out.println("3. Remover item da lista");
+			System.out.println("4. Visualizar lista completa");
+			System.out.println("5. Visualizar produtos mais baratos");
+			System.out.println("6. Visualizar produtos mais caros");
+			System.out.println("0. Sair");
+
+			try {
+				opcao = sc.nextInt();
+				if (opcao >= 0 && opcao <= 6) {
+					entradaValida = true;
+				} else {
+					System.out.println("Valor inválido! Digite novamente");
+				}
+			} catch (InputMismatchException i) {
+				sc.nextLine();
+				System.out.println("O valor não é um inteiro. Por favor digite um número de 0 à 6.\n");
+			}
+
+		}
+		return opcao;
+
+	}
+	
+	public static void addContato(Scanner sc, Lista<Produtos> lista) {
+		Produtos produtos;
+		System.out.println("Nome: ");
+		String nome = sc.next();
+		System.out.println("Preço: ");
+		double preco = sc.nextDouble();
+		produtos = new Produtos(nome, preco);
+		lista.adicionarItem(produtos);
+		
+	}
+	
+	protected static void visualizarIten(Lista<Produtos> lista) {
+			System.out.println(lista);
+	}
+	
+
+	
+	
+}

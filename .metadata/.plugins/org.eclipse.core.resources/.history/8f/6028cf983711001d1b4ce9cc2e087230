@@ -1,0 +1,31 @@
+package main;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class CalculadoraIMC {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("--CALCULADORA IMC--");
+		
+		System.out.println("Entre com seu peso: ");
+		
+		dadoPeso();
+		
+	
+
+	}
+	
+	protected static void dadoPeso() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Entre com o peso");
+		double peso = sc.nextDouble();
+		
+	}
+
+}
