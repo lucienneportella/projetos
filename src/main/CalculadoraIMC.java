@@ -25,7 +25,7 @@ public class CalculadoraIMC {
 				peso = sc.nextDouble();
 				pesoValido = true;
 			} catch (InputMismatchException e) {
-				System.out.println("Insira o seu peso com vígula");
+				System.out.println("Valor inválido.. digite novamente.");
 				sc.nextLine();
 				pesoValido = false;
 				System.out.println();
